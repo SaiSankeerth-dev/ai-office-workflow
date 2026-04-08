@@ -1,0 +1,82 @@
+[
+  {
+    "id": "email_001",
+    "sender": "newsletter@marketingcompany.com",
+    "subject": "LIMITED TIME OFFER!!! Act now!!!",
+    "body": "CONGRATULATIONS!!! You've been selected for an EXCLUSIVE deal! Buy now and save 50%!!! Click here immediately: www.totally-legit-deals.com Unsubscribe: click here (we'll ignore it lol)",
+    "expected_category": "spam",
+    "tone": "promotional, urgent, suspicious links"
+  },
+  {
+    "id": "email_002",
+    "sender": "ceo@company.com",
+    "subject": "URGENT: Server outage - need immediate response",
+    "body": "Team, Our production server is down. Customers are unable to access the platform. This is affecting all users in the Eastern region. Revenue impact estimated at $50k/hour. Need engineering team to investigate ASAP. I'm escalating this to highest priority. Please respond immediately with status updates. Best, CEO",
+    "expected_category": "urgent",
+    "tone": "formal, time-sensitive, business-critical"
+  },
+  {
+    "id": "email_003",
+    "sender": "hr@company.com",
+    "subject": "Reminder: Benefits enrollment deadline",
+    "body": "Hi everyone, Just a friendly reminder that open enrollment for benefits ends this Friday, November 15th. Please log into the HR portal to review and select your benefits for the upcoming year. No action needed if you want to keep your current selections. Thanks, HR Team",
+    "expected_category": "normal",
+    "tone": "friendly, informational, deadline mentioned but not urgent"
+  },
+  {
+    "id": "email_004",
+    "sender": "unknown@sketchy-domain.xyz",
+    "subject": "You won the lottery!!! CLAIM NOW!!!",
+    "body": "Dear lucky winner, You have been chosen! You won $5,000,000 in our international lottery!!! To claim your prize, please send your: Full name, Bank account details, Social security number. Act fast - offer expires in 24 hours!!! Regards, Totally Real Lottery",
+    "expected_category": "spam",
+    "tone": "scam attempt, requests sensitive data, too good to be true"
+  },
+  {
+    "id": "email_005",
+    "sender": "sarah.johnson@clientcorp.com",
+    "subject": "Re: Contract amendment needed TODAY",
+    "body": "Hi, Following up on our call. We need the contract amendment signed before end of business today. The legal team is waiting and our board approval depends on this. Can you send it over in the next hour? I'll stay late to review. This is blocking our Q4 launch. Thanks, Sarah",
+    "expected_category": "urgent",
+    "tone": "time-pressure, business-blocking, specific deadline mentioned"
+  },
+  {
+    "id": "email_006",
+    "subject": "Lunch tomorrow?",
+    "sender": "mike@company.com",
+    "body": "Hey, Want to grab lunch tomorrow? That new Thai place opened downtown. Let me know if you're free around 12:30. Mike",
+    "expected_category": "normal",
+    "tone": "casual, friendly, no urgency"
+  },
+  {
+    "id": "email_007",
+    "sender": "it-alerts@company.com",
+    "subject": "CRITICAL: Security breach detected",
+    "body": "SECURITY ALERT: We have detected unauthorized access to the production database. Immediate actions required: 1. All users must change passwords NOW, 2. Do not click any links from external senders, 3. Report suspicious activity to security@company.com. This is NOT a drill. Incident response team is activated. IT Security",
+    "expected_category": "urgent",
+    "tone": "emergency, security incident, action required"
+  },
+  {
+    "id": "email_008",
+    "sender": "promotions@bigstore.com",
+    "subject": "Your weekend deals are here! Save big!",
+    "body": "Hi there, Check out this weekend's top deals: Electronics up to 40% off, Home goods starting at $9.99, Free shipping on orders $50+. Shop now at bigstore.com. Valid through Sunday. You're receiving this because you subscribed. Unsubscribe here.",
+    "expected_category": "spam",
+    "tone": "promotional, but legitimate marketing (gray area)"
+  },
+  {
+    "id": "email_009",
+    "sender": "jessica.williams@partner.org",
+    "subject": "Quarterly report attached",
+    "body": "Hi, Attached is the Q3 report for your review. Let me know if you have questions. We'll discuss in next week's meeting. Best, Jessica",
+    "expected_category": "normal",
+    "tone": "professional, informational, no urgency"
+  },
+  {
+    "id": "email_010",
+    "sender": "support@company.com",
+    "subject": "System maintenance notification - URGENT RESPONSE REQUIRED",
+    "body": "Dear team, Scheduled maintenance is planned for Saturday 2-4 AM. This will affect all internal systems. CRITICAL: Please complete any urgent work BEFORE Friday EOD. Systems will be completely offline during maintenance window. Questions? Contact IT helpdesk. - IT Operations",
+    "expected_category": "normal",
+    "tone": "scheduled maintenance with URGENT in subject but actual deadline is days away - tests label vs content understanding"
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "id": "multi_001",
+    "sender": "jane.doe@client.com",
+    "subject": "Re: Project update and meeting request",
+    "body": "Hi, Thanks for sending over the project updates. The timeline looks good. Could we schedule a call next week to discuss the implementation details? Also, please forward the technical documentation when you have a chance. One more thing - I will be out of office from Dec 20-27. Best, Jane",
+    "expected_intents": [
+      "schedule_meeting",
+      "request_documentation",
+      "out_of_office_notification"
+    ],
+    "primary_intent": "out_of_office_notification",
+    "sentiment": "positive",
+    "urgency": "normal"
+  },
+  {
+    "id": "multi_002",
+    "sender": "support@service.com",
+    "subject": "Issue with recent order and feedback",
+    "body": "Hello, I am writing about order 4521. Two issues: 1. The item arrived damaged. I need a replacement shipped ASAP. 2. Can you cancel my subscription? I have been trying to do this through the website but it is not working. Very frustrating. On a positive note, the customer service rep I spoke with yesterday was helpful. Thanks for looking into this.",
+    "expected_intents": [
+      "request_replacement",
+      "cancel_subscription",
+      "complaint",
+      "compliment"
+    ],
+    "primary_intent": "request_replacement",
+    "sentiment": "mixed",
+    "urgency": "urgent"
+  },
+  {
+    "id": "multi_003",
+    "sender": "recruiter@company.com",
+    "subject": "Interview confirmation and next steps",
+    "body": "Hi Candidate, Great news! We would like to invite you for a second interview. Can you make it next Thursday afternoon? Let me know what time works. Please also bring your portfolio, references (3), and completed background check form. Looking forward to meeting you again. Best, Recruiting Team",
+    "expected_intents": [
+      "schedule_meeting",
+      "request_documents",
+      "interview_invitation"
+    ],
+    "primary_intent": "interview_invitation",
+    "sentiment": "positive",
+    "urgency": "normal"
+  },
+  {
+    "id": "multi_004",
+    "sender": "manager@company.com",
+    "subject": "Performance review and goals",
+    "body": "Team, It is review season again. Please complete your self-assessment by Friday. Schedule a 30-minute 1:1 with me next week. Submit your Q1 goals through the HR portal. Let me know if you want to discuss career development. Thanks for all your hard work this year. - Manager",
+    "expected_intents": [
+      "complete_self_assessment",
+      "schedule_meeting",
+      "submit_goals",
+      "career_discussion"
+    ],
+    "primary_intent": "complete_self_assessment",
+    "sentiment": "neutral",
+    "urgency": "normal"
+  },
+  {
+    "id": "multi_005",
+    "sender": "angry@customer.com",
+    "subject": "UNACCEPTABLE SERVICE",
+    "body": "I am EXTREMELY disappointed. Your product stopped working after 2 weeks. I have called 3 times and no one helps. I want: A full refund IMMEDIATELY. To speak with a manager. An explanation of why this happened. This is ridiculous. I am posting reviews everywhere if this is not fixed today. Very unhappy customer",
+    "expected_intents": [
+      "request_refund",
+      "escalate_issue",
+      "request_explanation",
+      "complaint",
+      "threaten_negative_review"
+    ],
+    "primary_intent": "request_refund",
+    "sentiment": "negative",
+    "urgency": "urgent"
+  },
+  {
+    "id": "multi_006",
+    "sender": "colleague@work.com",
+    "subject": "Team lunch and holiday planning",
+    "body": "Hey team! Who is up for lunch at that new burger place on Friday? Say around noon? Also, we need to plan the holiday party: Pick a date (Dec 15 or 16?), Choose a venue, Decide on gift exchange (20 dollars limit?). Reply all with your thoughts! Mike",
+    "expected_intents": [
+      "social_invitation",
+      "plan_event",
+      "choose_date",
+      "choose_venue",
+      "request_response"
+    ],
+    "primary_intent": "social_invitation",
+    "sentiment": "positive",
+    "urgency": "low"
+  },
+  {
+    "id": "multi_007",
+    "sender": "billing@utility.com",
+    "subject": "Account overdue - immediate action required",
+    "body": "Dear Customer, Your account is 45 days overdue. Current balance: 127.50 dollars. To avoid service interruption: Pay online at utility.com/pay, Call 1-800-555-1234, Mail check to the address below. If you have already paid, thank you. Questions? Contact our billing department. This is a reminder. Not a notice of disconnection... yet.",
+    "expected_intents": [
+      "payment_reminder",
+      "contact_billing",
+      "disconnection_warning"
+    ],
+    "primary_intent": "payment_reminder",
+    "sentiment": "negative",
+    "urgency": "urgent"
+  },
+  {
+    "id": "multi_008",
+    "sender": "friend@personal.com",
+    "subject": "Happy Birthday! And other stuff",
+    "body": "HAPPY BIRTHDAY! Hope you have an amazing day! By the way, can you water my plants next weekend? I am going to that conference in Chicago. Also, did you finish reading that book I lent you? No rush, just curious. Let us grab coffee soon! Best, Your friend",
+    "expected_intents": [
+      "birthday_greeting",
+      "request_favor",
+      "book_reminder",
+      "social_invitation"
+    ],
+    "primary_intent": "birthday_greeting",
+    "sentiment": "positive",
+    "urgency": "low"
+  },
+  {
+    "id": "multi_009",
+    "sender": "legal@company.com",
+    "subject": "Contract review - ACTION REQUIRED",
+    "body": "Team, The attached contract requires review. Actions needed: Legal: Review sections 3-5 for compliance issues. Finance: Approve pricing terms. Ops: Confirm timeline feasibility. DEADLINE: This Friday, 5 PM. Please track changes and comment directly in the document. This is time-sensitive. Legal Department",
+    "expected_intents": [
+      "contract_review",
+      "legal_review",
+      "finance_approval",
+      "operations_confirmation",
+      "deadline_notification"
+    ],
+    "primary_intent": "contract_review",
+    "sentiment": "neutral",
+    "urgency": "urgent"
+  },
+  {
+    "id": "multi_010",
+    "sender": "mixed@ambiguous.org",
+    "subject": "Project status and quick question",
+    "body": "Hi, Status update: Project is 70 percent complete. On track for delivery. Quick favor: Can you review my draft proposal when you get a chance? Also, are we still meeting Thursday? Thanks for everything. You are the best. P.S. - Your presentation yesterday was really impressive. Best, Sam",
+    "expected_intents": [
+      "status_update",
+      "request_review",
+      "meeting_confirmation",
+      "compliment"
+    ],
+    "primary_intent": "status_update",
+    "sentiment": "positive",
+    "urgency": "normal"
+  }
+]

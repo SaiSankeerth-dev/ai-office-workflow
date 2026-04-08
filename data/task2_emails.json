@@ -1,0 +1,122 @@
+[
+  {
+    "id": "sched_001",
+    "sender": "alex.developer@techcorp.com",
+    "subject": "Meeting request: Sprint planning",
+    "body": "Hi team, I would like to schedule our sprint planning meeting. How does next Tuesday, November 14th at 10:00 AM work for everyone? We will need about 1.5 hours to cover backlog prioritization. Please confirm or suggest alternatives. Thanks, Alex",
+    "scheduling_intent": true,
+    "meetings": [
+      {
+        "date": "November 14",
+        "time": "10:00 AM",
+        "duration": "1.5 hours",
+        "purpose": "Sprint planning",
+        "status": "proposed"
+      }
+    ]
+  },
+  {
+    "id": "sched_002",
+    "sender": "maria.manager@business.org",
+    "subject": "Follow-up on our discussion - can we meet Thursday?",
+    "body": "Hi, Following our call yesterday, I think we should meet to discuss the proposal in detail. Would Thursday at 2pm work? Let us aim for 45 minutes. If that does not work, Friday afternoon is also fine. Best, Maria",
+    "scheduling_intent": true,
+    "meetings": [
+      {
+        "date": "Thursday",
+        "time": "2pm",
+        "duration": "45 minutes",
+        "purpose": "Discuss proposal",
+        "status": "proposed"
+      }
+    ]
+  },
+  {
+    "id": "sched_003",
+    "sender": "team@company.com",
+    "subject": "Weekly standup reminder",
+    "body": "Team, Just a reminder about our weekly standup tomorrow at 9:15 AM. Same Zoom link as always. See you there!",
+    "scheduling_intent": true,
+    "meetings": [
+      {
+        "date": "tomorrow",
+        "time": "9:15 AM",
+        "duration": "15 min",
+        "purpose": "Weekly standup",
+        "status": "confirmed"
+      }
+    ]
+  },
+  {
+    "id": "sched_004",
+    "sender": "john.smith@external.com",
+    "subject": "Project kickoff - multiple dates",
+    "body": "Hello, We need to schedule the project kickoff meeting. Option 1: Monday Nov 18 at 10:00 AM EST. Option 2: Wednesday Nov 20 at 2:00 PM EST. Option 3: Friday Nov 22 at 11:00 AM EST. Each session will run approximately 2 hours. Please let me know your preference.",
+    "scheduling_intent": true,
+    "meetings": [
+      {
+        "date": "Monday Nov 18",
+        "time": "10:00 AM EST",
+        "duration": "2 hours",
+        "purpose": "Project kickoff",
+        "status": "proposed"
+      }
+    ]
+  },
+  {
+    "id": "sched_005",
+    "sender": "lisa.chen@research.edu",
+    "subject": "Thesis defense scheduling",
+    "body": "Dear committee members, I am writing to schedule my thesis defense. My availability next month: Week of Dec 9: Mon-Wed afternoons preferred. Week of Dec 16: Any day except Friday. The defense typically runs 90 minutes.",
+    "scheduling_intent": true,
+    "meetings": [
+      {
+        "date": "Week of Dec 9",
+        "time": "Mon-Wed afternoons",
+        "duration": "90 min",
+        "purpose": "Thesis defense",
+        "status": "availability provided"
+      }
+    ]
+  },
+  {
+    "id": "sched_006",
+    "sender": "auto-reply@booking-system.com",
+    "subject": "Confirmation: Your appointment is scheduled",
+    "body": "APPOINTMENT CONFIRMED. Your appointment has been booked. Date: December 5, 2024. Time: 3:30 PM. Duration: 60 minutes. Location: Conference Room B.",
+    "scheduling_intent": true,
+    "meetings": [
+      {
+        "date": "December 5, 2024",
+        "time": "3:30 PM",
+        "duration": "60 minutes",
+        "purpose": "Appointment with Dr. Thompson",
+        "status": "confirmed"
+      }
+    ]
+  },
+  {
+    "id": "sched_007",
+    "sender": "hr.training@company.com",
+    "subject": "Mandatory training session",
+    "body": "Hello, This is an automated notification. You have been enrolled in Security Awareness Training. Date: January 15, 2025. Time: 9:00 AM - 12:00 PM. Location: Training Center, Room 201.",
+    "scheduling_intent": true,
+    "meetings": [
+      {
+        "date": "January 15, 2025",
+        "time": "9:00 AM",
+        "duration": "3 hours",
+        "purpose": "Security Awareness Training",
+        "status": "confirmed"
+      }
+    ]
+  },
+  {
+    "id": "sched_008",
+    "sender": "informative@newsletter.com",
+    "subject": "Interesting article about time management",
+    "body": "Hi, Thought you might find this article interesting: 10 Tips for Better Meeting Management. Link: www.productivity-blog.com/meeting-tips. No need to reply.",
+    "scheduling_intent": false,
+    "meetings": []
+  }
+]
