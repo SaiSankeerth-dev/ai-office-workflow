@@ -1,0 +1,16 @@
+[project]
+name = "ai-office-workflow"
+version = "0.1.0"
+description = "AI Office Workflow OpenEnv Environment"
+authors = [
+    { name = "Sai Sankeerth" }
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "requests",
+    "pydantic",
+]
+
+[tool.openenv]
+entrypoint = "inference.py"
