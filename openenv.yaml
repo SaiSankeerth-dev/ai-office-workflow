@@ -1,228 +1,68 @@
-name: ai-office-workflow-simulator
-description: Reinforcement learning environment for email triage and workflow optimization tasks
-version: "1.0.0"
-entrypoint: environment:OfficeWorkflowEnv
-tags:
-  - email
-  - classification
-  - nlp
-  - reinforcement-learning
-  - workflow
-  
-metadata:
-  author: AI Office Workflow Team
-  license: MIT
-  github: https://github.com/ai-office/workflow-simulator
-  documentation: https://github.com/ai-office/workflow-simulator/blob/main/README.md
-  
+version: "1"
+
 environment:
-  runtime: python
-  version: "3.11"
-  memory: "8GB"
-  cpus: 2
-  timeout: 1200
-  
+  name: ai-office-workflow-simulator
+  description: Reinforcement learning environment for email triage, meeting extraction, and multi-intent recognition
+  version: "1.0.0"
+
+runtime:
+  type: docker
+  language: python
+  version: "3.10"
+
+entrypoint:
+  module: environment
+  class: OfficeWorkflowEnv
+  file: inference.py
+
+variables:
+  API_BASE_URL:
+    description: Base URL for API calls
+    default: "https://sankeerth275-ai-office-workflow.hf.space"
+    required: false
+  MODEL_NAME:
+    description: Model name for inference
+    default: "gpt-4o-mini"
+    required: false
+  OPENAI_API_KEY:
+    description: OpenAI API key
+    required: false
+  HF_TOKEN:
+    description: Hugging Face token
+    required: false
+
 tasks:
   - id: classification
     name: Email Classification
-    description: Classify emails as spam, urgent, or normal based on content, tone, and sender
-    difficulty_levels:
-      - easy: Clear spam or clear urgency indicators
-      - medium: Promotional content with legitimate sources
-      - hard: Ambiguous cases where subject and content conflict
-    action_space:
-      type: object
-      schema:
-        task_type:
-          type: string
-          enum: [classification]
-          required: true
-        category:
-          type: string
-          enum: [spam, urgent, normal]
-          required: true
-        confidence:
-          type: number
-          minimum: 0
-          maximum: 1
-          required: false
-        reasoning:
-          type: string
-          required: false
-    observation_space:
-      type: object
-      schema:
-        current_email:
-          type: object
-          properties:
-            sender: string
-            subject: string
-            body: string
-        task_type: string
-        history: array
-        episode_number: integer
-    reward_spec:
-      accuracy_weight: 0.5
-      completeness_weight: 0.3
-      efficiency_weight: 0.2
-      partial_scoring: true
-      penalties:
-        missing_field: 0.1
-        invalid_category: 0.15
-    ground_truth_fields:
-      - expected_category
-      - tone
-    evaluation_criteria:
-      - correct_category: baseline 0.5, full match 1.0
-      - confidence_calibration: bonus for well-calibrated predictions
-      - reasoning_quality: bonus for explanations over 20 chars
-        
+    description: Classify emails as spam, urgent, or normal
+    difficulty:
+      - easy
+      - medium
+      - hard
+
   - id: schedule_extraction
-    name: Schedule/Meeting Extraction
-    description: Extract meeting information including dates, times, durations, and purposes from emails
-    difficulty_levels:
-      - easy: Single confirmed meeting with clear details
-      - medium: Multiple options or proposed times
-      - hard: Vague availability windows or conflicting information
-    action_space:
-      type: object
-      schema:
-        task_type:
-          type: string
-          enum: [schedule_extraction]
-          required: true
-        meetings:
-          type: array
-          items:
-            type: object
-            properties:
-              date: string
-              time: string
-              duration: string
-              purpose: string
-              status: string
-    observation_space:
-      type: object
-      schema:
-        current_email: object
-        task_type: string
-        history: array
-    reward_spec:
-      accuracy_weight: 0.4
-      completeness_weight: 0.4
-      efficiency_weight: 0.2
-      partial_scoring: true
-      meeting_match_threshold: 0.7
-    ground_truth_fields:
-      - scheduling_intent
-      - meetings
-    evaluation_criteria:
-      - meeting_detection: correct identification of scheduling content
-      - date_extraction: accuracy of parsed dates
-      - time_extraction: accuracy of parsed times (±1 hour tolerance)
-      - duration_extraction: accuracy within 30% tolerance
-      - purpose_matching: keyword overlap in purpose descriptions
-      
+    name: Meeting Extraction
+    description: Extract meeting information from emails
+    difficulty:
+      - easy
+      - medium
+      - hard
+
   - id: multi_intent
     name: Multi-Intent Recognition
-    description: Identify all intents and actions required from a single email, including scheduling, requests, notifications, and replies
-    difficulty_levels:
-      - easy: 1-2 clear intents with explicit language
-      - medium: 3 intents with some implicit requirements
-      - hard: 4+ intents with mixed sentiment and urgency
-    action_space:
-      type: object
-      schema:
-        task_type:
-          type: string
-          enum: [multi_intent]
-          required: true
-        intents:
-          type: array
-          items: string
-          required: true
-        suggested_reply:
-          type: string
-          required: false
-        primary_intent:
-          type: string
-          required: false
-        sentiment:
-          type: string
-          enum: [positive, negative, neutral, mixed]
-          required: false
-        urgency:
-          type: string
-          enum: [urgent, normal, low]
-          required: false
-        reasoning:
-          type: string
-          required: false
-    observation_space:
-      type: object
-      schema:
-        current_email: object
-        task_type: string
-        history: array
-    reward_spec:
-      accuracy_weight: 0.3
-      completeness_weight: 0.4
-      efficiency_weight: 0.3
-      partial_scoring: true
-      intent_match_threshold: 0.5
-      reply_bonus: 0.15
-    ground_truth_fields:
-      - expected_intents
-      - primary_intent
-      - sentiment
-      - urgency
-    evaluation_criteria:
-      - intent_recall: fraction of true intents identified
-      - intent_precision: fraction of predicted intents that are correct
-      - primary_intent_match: correct identification of most important intent
-      - sentiment_match: correct sentiment classification
-      - urgency_match: correct urgency classification
-      - reply_quality: coherence and relevance of suggested reply
+    description: Identify all intents in emails and generate replies
+    difficulty:
+      - easy
+      - medium
+      - hard
 
-memory_system:
-  enabled: true
-  max_history: 10
-  observation_injection: last_3_episodes
-  
-episode_structure:
-  sequence: [classification, schedule_extraction, multi_intent]
-  total_episodes_per_eval: 10
-  seed: 42
-  
-baseline:
-  agent: openai-compatible-llm
-  model: gpt-4o-mini
-  expected_average_reward: 0.65
-  expected_accuracy: 0.75
-  
-grading:
-  method: weighted_score
-  formula: reward = w1*accuracy + w2*completeness + w3*efficiency - penalty
-  per_task_weights:
-    classification:
-      accuracy: 0.5
-      completeness: 0.3
-      efficiency: 0.2
-    schedule_extraction:
-      accuracy: 0.4
-      completeness: 0.4
-      efficiency: 0.2
-    multi_intent:
-      accuracy: 0.3
-      completeness: 0.4
-      efficiency: 0.3
-      
-output_format:
-  metrics:
-    - total_episodes
-    - average_reward
-    - min_reward
-    - max_reward
-    - by_task:
-        - count
-        - average_reward
+metadata:
+  author: AI Office Workflow Team
+  license: MIT
+  tags:
+    - email
+    - classification
+    - nlp
+    - reinforcement-learning
+    - workflow
+  github: https://github.com/SaiSankeerth-dev/ai-office-workflow
