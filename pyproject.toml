@@ -5,12 +5,17 @@ description = "AI Office Workflow OpenEnv Environment"
 authors = [
     { name = "Sai Sankeerth" }
 ]
+
 dependencies = [
     "fastapi",
     "uvicorn",
     "requests",
     "pydantic",
+    "openenv-core>=0.2.0"
 ]
+
+[project.scripts]
+server = "app:app"
 
 [tool.openenv]
 entrypoint = "inference.py"
