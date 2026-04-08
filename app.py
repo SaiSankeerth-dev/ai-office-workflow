@@ -4,10 +4,14 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {
-        "status": "running",
-        "message": "AI Office Workflow Simulator is LIVE"
-    }
+    try:
+        return {
+            "status": "running",
+            "app": "AI Office Workflow Simulator",
+            "message": "Deployment successful"
+        }
+    except Exception as e:
+        return {"status": "error", "error": str(e)}
 
 @app.get("/health")
 def health():
