@@ -1,3 +1,12 @@
+---
+title: AI Office Workflow
+emoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 8000
+---
+
 # AI Office Workflow Simulator
 
 A reinforcement learning environment for email triage, meeting extraction, and multi-intent recognition tasks.
