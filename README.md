@@ -268,10 +268,6 @@ Each task has different weights for accuracy/completeness/efficiency, forcing ag
 ### 5. Baseline Scores Documented
 Run `python inference.py` to generate real baseline scores. Judges can verify actual performance.
 
-## License
-
-MIT License - See LICENSE file for details.
-
 ## Contributing
 
 1. Fork the repository
