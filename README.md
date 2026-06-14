@@ -285,3 +285,6 @@ Run `python inference.py` to generate real baseline scores. Judges can verify ac
   url={https://github.com/ai-office/workflow-simulator}
 }
 ```
+📄 License
+
+This project is open-source and available under the MIT License.
