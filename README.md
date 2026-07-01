@@ -9,6 +9,8 @@ app_port: 8000
 
 # AI Office Workflow Simulator
 
+![License](https://img.shields.io/github/license/SaiSankeerth-dev/ai-office-workflow) ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![Docker](https://img.shields.io/badge/deploy-Docker%20%2F%20HF%20Spaces-2496ED?logo=docker)
+
 A reinforcement learning environment for email triage, meeting extraction, and multi-intent recognition tasks.
 
 ## Overview
@@ -275,16 +277,6 @@ Run `python inference.py` to generate real baseline scores. Judges can verify ac
 3. Run tests: `pytest tests/`
 4. Submit a pull request
 
-## Citation
+## License
 
-```bibtex
-@misc{ai_office_workflow_2024,
-  title={AI Office Workflow Simulator},
-  author={AI Office Workflow Team},
-  year={2024},
-  url={https://github.com/ai-office/workflow-simulator}
-}
-```
-📄 License
-
-This project is open-source and available under the MIT License.
+MIT — see [LICENSE](LICENSE).
